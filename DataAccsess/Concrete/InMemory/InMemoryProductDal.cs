@@ -37,6 +37,11 @@ namespace DataAccsess.Concrete.InMemory
             return _products;
         }
 
+        public List<Product> GetAllByCategory(int categoryId)
+        {
+            return _products.Where(p => p.CategoryId == categoryId).ToList();
+        }
+
         public void Update(Product product)
         {
             //Gonderdigim urun id'sine sahip olan listedeki urunu bul.
